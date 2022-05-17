@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+	.sidenav {
+		@apply flex flex-col justify-center items-center  text-primary border-2 border-primary p-3 rounded-xl w-20 hover:text-secondary hover:border-secondary;
+	}
+	.sidenavActive {
+		@apply flex flex-col justify-center items-center w-20 text-accent bg-primary p-3 rounded-xl hover:text-secondary;
+	}
+	::-webkit-scrollbar {
+		@apply w-2;
+	}
+	::-webkit-scrollbar-track {
+		@apply bg-primary/40;
+	}
+	::-webkit-scrollbar-thumb {
+		@apply bg-primary/80 rounded-md;
+	}
+	::-webkit-scrollbar-thumb:hover {
+		@apply bg-primary;
+	}
+	tbody tr:nth-child(odd) {
+		@apply bg-white hover:bg-primary/20;
+	}
+	tbody tr:nth-child(even) {
+		@apply bg-accent hover:bg-primary/20;
+	}
 }
